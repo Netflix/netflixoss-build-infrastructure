@@ -11,6 +11,15 @@ buildscript {
   }
 }
 
+plugins {
+  id 'com.gradle.build-scan' version '2.1'
+}
+
+buildScan {
+  termsOfServiceUrl = 'https://gradle.com/terms-of-service'    
+  termsOfServiceAgree = 'yes'
+}
+
 allprojects {
   group = 'com.netflix.buildinfrastructure'
   apply plugin: 'nebula.netflixoss' 
