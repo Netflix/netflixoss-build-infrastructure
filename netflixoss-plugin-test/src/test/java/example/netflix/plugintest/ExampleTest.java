@@ -22,12 +22,20 @@ public class ExampleTest {
     @Test
     public void canaryTest() {
         Example example = new Example();
+        println("hello do we get output");
         assertEquals("Hi test", example.sayHi("test"));
     }
 
     @Test
     public void messageTest() {
     	Example example = new Example();
+        println("messagetest")
     	assertEquals("Hello Sam", example.message("Sam"));
+    }
+
+    @Test
+    public void canaryFail() {
+        Example example = Example();
+        assertEquals("Hello Rob", example.message("Bob"));
     }
 }
