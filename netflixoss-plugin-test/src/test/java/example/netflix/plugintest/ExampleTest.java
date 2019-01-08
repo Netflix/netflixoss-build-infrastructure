@@ -29,7 +29,7 @@ public class ExampleTest {
     @Test
     public void messageTest() {
     	Example example = new Example();
-        println("messagetest")
+        println("messagetest");
     	assertEquals("Hello Sam", example.message("Sam"));
     }
 
