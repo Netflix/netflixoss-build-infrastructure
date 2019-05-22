@@ -34,6 +34,7 @@ public class ExampleTest {
     }
 
     @Test
+    @Ignore("this is example of failing test, ignored because of releasing testing")
     public void canaryFail() {
         Example example = new Example();
         assertEquals("Hello Rob", example.message("Bob"));
