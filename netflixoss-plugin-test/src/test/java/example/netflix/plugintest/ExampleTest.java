@@ -30,7 +30,7 @@ public class ExampleTest {
     public void messageTest() {
     	Example example = new Example();
         System.out.println("messagetest");
-    	assertEquals("Hello Sam", example.message("Sam"));
+    	assertEquals("Hello Sam!", example.message("Sam"));
     }
 
     @Test

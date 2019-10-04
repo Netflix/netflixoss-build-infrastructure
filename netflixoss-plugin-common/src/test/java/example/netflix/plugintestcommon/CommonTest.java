@@ -22,6 +22,6 @@ public class CommonTest {
     @Test
     public void messageTest() {
         Common common = new Common();
-        assertEquals("Hello Rob", common.message("Rob"));
+        assertEquals("Hello Rob!", common.message("Rob"));
     }
 }
