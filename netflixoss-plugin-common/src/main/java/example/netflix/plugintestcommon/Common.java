@@ -17,6 +17,6 @@ package example.netflix.plugintestcommon;
 
 public class Common {
   public String message(String name) {
-    return "Hello " + name;
+    return "Hello " + name + "!";
   }
 }
