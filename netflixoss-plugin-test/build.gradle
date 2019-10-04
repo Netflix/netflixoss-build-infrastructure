@@ -2,7 +2,10 @@ plugins {
   id 'java'
 }
 
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
 dependencies {
-  compile project(':netflixoss-plugin-common')
-  testCompile 'junit:junit:4.+'
+  implementation project(':netflixoss-plugin-common')
+  testImplementation 'junit:junit:4.+'
 }

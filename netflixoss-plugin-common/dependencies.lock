@@ -1,0 +1,14 @@
+{
+    "testCompileClasspath": {
+        "junit:junit": {
+            "locked": "4.13-beta-3",
+            "requested": "4.+"
+        }
+    },
+    "testRuntimeClasspath": {
+        "junit:junit": {
+            "locked": "4.13-beta-3",
+            "requested": "4.+"
+        }
+    }
+}
