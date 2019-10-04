@@ -1,0 +1,35 @@
+{
+    "compileClasspath": {
+        "com.netflix.buildinfrastructure:netflixoss-plugin-common": {
+            "project": true
+        }
+    },
+    "default": {
+        "com.netflix.buildinfrastructure:netflixoss-plugin-common": {
+            "project": true
+        }
+    },
+    "runtimeClasspath": {
+        "com.netflix.buildinfrastructure:netflixoss-plugin-common": {
+            "project": true
+        }
+    },
+    "testCompileClasspath": {
+        "com.netflix.buildinfrastructure:netflixoss-plugin-common": {
+            "project": true
+        },
+        "junit:junit": {
+            "locked": "4.13-beta-3",
+            "requested": "4.+"
+        }
+    },
+    "testRuntimeClasspath": {
+        "com.netflix.buildinfrastructure:netflixoss-plugin-common": {
+            "project": true
+        },
+        "junit:junit": {
+            "locked": "4.13-beta-3",
+            "requested": "4.+"
+        }
+    }
+}
