@@ -1,13 +1,16 @@
 buildscript {
   repositories {
     jcenter()
+    mavenLocal()
     maven { url 'https://plugins.gradle.org/m2/' }
     maven {
       url  "https://dl.bintray.com/netflixoss/oss-candidate"
     }
   }
   dependencies {
-     classpath 'com.netflix.nebula:gradle-netflixoss-project-plugin:8.0.0'
+     classpath ('com.netflix.nebula:gradle-netflixoss-project-plugin:test-multimodule-publishing') {
+       force = true
+     }
   }
 }
 
@@ -38,6 +41,7 @@ subprojects {
   }
 }
 
-allprojects {
-  bintray.pkg.repo = 'BuildTesting' // used for testing
+bintray {
+  repo = 'BuildTesting' // used for testing
 }
+
