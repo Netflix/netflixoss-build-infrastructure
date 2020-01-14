@@ -8,9 +8,7 @@ buildscript {
     }
   }
   dependencies {
-     classpath ('com.netflix.nebula:gradle-netflixoss-project-plugin:test-multimodule-publishing') {
-       force = true
-     }
+     classpath ('com.netflix.nebula:gradle-netflixoss-project-plugin:8.4.4')
   }
 }
 
