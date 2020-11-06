@@ -1,0 +1,41 @@
+name: ci
+on:
+  push:
+    branches:
+      - master
+    tags-ignore:
+      - '*'
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        # test against latest update of some major Java version(s), as well as specific LTS version(s)
+        java: [ 8, 11 ]
+    name: CI with Java ${{ matrix.java }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup jdk
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java }}
+      - uses: actions/cache@v2
+        id: gradle-cache
+        with:
+          path: ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/gradle/dependency-locks/*.lockfile') }}
+          restore-keys: |
+            - ${{ runner.os }}-gradle-
+      - uses: actions/cache@v2
+        id: gradle-wrapper-cache
+        with:
+          path: ~/.gradle/wrapper
+          key: ${{ runner.os }}-gradlewrapper-${{ hashFiles('gradle/wrapper/*') }}
+          restore-keys: |
+            - ${{ runner.os }}-gradlewrapper-
+      - name: Echo Step
+        run: echo ${{ secrets.ORG_TEST_SECRET}}
+      - name: Build with Gradle
+        run: ./gradlew --info --stacktrace build
