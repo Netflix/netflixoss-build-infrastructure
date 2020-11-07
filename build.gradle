@@ -41,7 +41,12 @@ subprojects {
 
 tasks.register('myTask') {
   doLast {
-    println project.getProperty('testSecret')
+    String secretFromCommandLine = project.getProperty('testSecret')
+    if ( secretFromCommandLine == 'my test secret' ) {
+      println "secret matches"
+    } else {
+      println "secret doesn't match"
+    }
   }
 }
 
