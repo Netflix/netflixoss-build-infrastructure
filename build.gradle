@@ -39,6 +39,12 @@ subprojects {
   }
 }
 
+tasks.register('myTask') {
+  doLast {
+    println project.getProperty('testSecret')
+  }
+}
+
 bintray {
   repo = 'BuildTesting' // used for testing
 }

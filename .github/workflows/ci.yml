@@ -36,6 +36,6 @@ jobs:
           restore-keys: |
             - ${{ runner.os }}-gradlewrapper-
       - name: Echo Step
-        run: echo ${{ secrets.ORG_TEST_SECRET}}
+        run: ./gradlew myTask -PtestSecret=${{ secrets.ORG_TEST_SECRET}}
       - name: Build with Gradle
         run: ./gradlew --info --stacktrace build
