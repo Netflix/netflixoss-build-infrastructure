@@ -1,24 +1,5 @@
-buildscript {
-  repositories {
-    jcenter()
-    mavenLocal()
-    maven { url 'https://plugins.gradle.org/m2/' }
-    maven {
-      url  "https://dl.bintray.com/netflixoss/oss-candidate"
-    }
-  }
-  dependencies {
-     classpath ('com.netflix.nebula:gradle-netflixoss-project-plugin:8.4.4')
-  }
-}
-
 plugins {
-  id 'com.gradle.build-scan' version '2.1'
-}
-
-buildScan {
-  termsOfServiceUrl = 'https://gradle.com/terms-of-service'    
-  termsOfServiceAgree = 'yes'
+  id "nebula.netflixoss" version "9.0.0"
 }
 
 allprojects {
@@ -28,9 +9,9 @@ allprojects {
 
 subprojects {   
   contacts {
-    "rob.spieldenner@gmail.com" {
-      moniker "Rob Spieldenner"
-      github "rspieldenner"
+    "rperezalcolea@netflix.com" {
+      moniker "Roberto Perez Alcolea"
+      github "rpalcolea"
     }
   }
 
@@ -49,8 +30,3 @@ tasks.register('myTask') {
     }
   }
 }
-
-bintray {
-  repo = 'BuildTesting' // used for testing
-}
-
